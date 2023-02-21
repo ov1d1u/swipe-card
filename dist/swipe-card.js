@@ -6,6 +6,7 @@ const e=window,t=e.ShadowRoot&&(void 0===e.ShadyCSS||e.ShadyCSS.nativeShadow)&&"
     `}setConfig(e){if(!e||!e.cards||!Array.isArray(e.cards))throw new Error("Card config incorrect");this._config=e,this._parameters=Qt(this._config.parameters)||{},this._cards=[],window.ResizeObserver&&(this._ro=new ResizeObserver((()=>{this.swiper&&this.swiper.update()}))),this._createCards()}set hass(e){this._hass=e,this._cards&&this._cards.forEach((e=>{e.hass=this._hass}))}connectedCallback(){super.connectedCallback(),this._config&&this._hass&&this._updated&&!this._loaded?this._initialLoad():this.swiper&&this.swiper.update()}updated(e){super.updated(e),this._updated=!0,this._config&&this._hass&&this.isConnected&&!this._loaded?this._initialLoad():this.swiper&&this.swiper.update()}render(){return this._config&&this._hass?I`
       <div
         class="swiper-container"
+        style="width: 100%; height: 100%;"
         dir="${this._hass.translationMetadata.translations[this._hass.selectedLanguage||this._hass.language].isRTL?"rtl":"ltr"}"
       >
         <div class="swiper-wrapper">${this._cards}</div>

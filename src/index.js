@@ -109,6 +109,7 @@ class SwipeCard extends LitElement {
     return html`
       <div
         class="swiper-container"
+        style="width: 100%; height: 100%;"
         dir="${this._hass.translationMetadata.translations[
           this._hass.selectedLanguage || this._hass.language
         ].isRTL || false
